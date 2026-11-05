@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Try the Look — Runway</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Six looks, styled head to toe. Explore the runway, isolate a look, and tap a pin to see the piece.">
+<link rel="preload" as="image" href="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp" fetchpriority="high">
+<link rel="stylesheet" href="./runway.css">
+<style>html,body{margin:0;padding:0;background:#fff;color:#151413}a{color:inherit;text-decoration:none}a:hover{color:inherit}</style>
+</helmet>
+<header class="site-header shopify-section-group-header-group">
+  <a href="./" class="brand" aria-label="Runway home"><img src="./assets/logo.png" width="63" height="24" alt="Nike"></a>
+  <nav aria-label="Main navigation">
+    <a href="./">Home</a>
+    <div class="nav-shop">
+      <button class="nav-shop__btn" aria-expanded="false" aria-controls="shop-menu">Shop<svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"></path></svg></button>
+      <div class="nav-shop__menu" id="shop-menu" aria-hidden="true">
+        <div class="nav-shop__col">
+          <a class="nav-shop__h" href="#shop-shirts" data-shop-cat="shirts"><span>Shirts</span><span>05</span></a>
+          <a href="#shop-p-tshirt" data-shop-cat="shirts" data-shop-item="tshirt">Tshirt</a>
+          <a href="#shop-p-sweatshirt" data-shop-cat="shirts" data-shop-item="sweatshirt">Sweatshirt</a>
+          <a href="#shop-p-sweatshirt-plus" data-shop-cat="shirts" data-shop-item="sweatshirt-plus">Sweatshirt Plus</a>
+          <a href="#shop-p-hoodie" data-shop-cat="shirts" data-shop-item="hoodie">Hoodie</a>
+          <a href="#shop-p-hoodie-black" data-shop-cat="shirts" data-shop-item="hoodie-black">Hoodie Black</a>
+        </div>
+        <div class="nav-shop__col">
+          <a class="nav-shop__h" href="#shop-pants" data-shop-cat="pants"><span>Pants</span><span>01</span></a>
+          <a href="#shop-p-wide-leg-denim" data-shop-cat="pants" data-shop-item="wide-leg-denim">Wide Leg Denim<span class="nav-shop__tag">Placeholder</span></a>
+        </div>
+        <div class="nav-shop__col">
+          <a class="nav-shop__h" href="#shop-shoes" data-shop-cat="shoes"><span>Shoes</span><span>03</span></a>
+          <a href="#shop-p-tatum-5-orbit-copy" data-shop-cat="shoes" data-shop-item="tatum-5-orbit-copy">Air Jordan 12 Retro</a>
+          <a href="#shop-p-tatum-5-orbit" data-shop-cat="shoes" data-shop-item="tatum-5-orbit">Tatum 5 Orbit</a>
+          <a href="#shop-p-air-jordan-12-retro-copy" data-shop-cat="shoes" data-shop-item="air-jordan-12-retro-copy">Luka 5</a>
+        </div>
+        <a class="nav-shop__all" href="#shop" data-shop-cat="all"><span>Shop all</span><svg width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+    <a href="./" aria-current="page">Runway</a>
+  </nav>
+  <button id="open-bag" aria-label="Open styling bag"><svg width="22" height="24" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 8h16l1 16H3L4 8zM8 8V6a4 4 0 0 1 8 0v2"></path></svg><span data-cart-count="">0</span></button>
+</header>
+<main>
+  <x-import component-from-global-scope="runway-section" from="./runway.js" hint-size="100%,100vh"></x-import>
+  <section class="shop" id="shop" aria-label="Shop the pieces"></section>
+</main>
+<dialog id="bag-dialog">
+  <div class="bag-heading"><h2>Your styling bag</h2><button id="close-bag" aria-label="Close styling bag">×</button></div>
+  <p class="bag-note">A local outfit shortlist. No payment or order is collected here. Open a piece on the original demo to continue.</p>
+  <div id="bag-items"></div>
+  <p id="bag-total"></p>
+  <button id="export-bag">Download outfit shortlist</button>
+</dialog>
+<div id="bag-status" role="status" aria-live="polite"></div>
+</x-dc>
+</body>
+</html>
